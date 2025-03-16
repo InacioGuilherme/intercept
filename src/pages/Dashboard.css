@@ -1,0 +1,174 @@
+/* Reset e fundo */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* Container principal */
+  .dashboard-container {
+    width: 100%;
+    max-width: 420px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Cabeçalho atualizado */
+  header {
+    width: 100%;
+    background: white;
+    height: 70px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .header-content {
+    display: flex;
+  }
+  
+  /* Organização do título e menu */
+  .header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  /* Texto de boas-vindas */
+  .welcome-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .welcome-text h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .welcome-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Ícone de menu */
+  .menu-btn {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Ícone do usuário */
+  .user-icon {
+    background-color: #007bff;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  /* Grid de opções atualizado */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas */
+    gap: 15px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Blocos de opções */
+  .tile {
+    height: 160px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  /* Ajustando a imagem dentro do bloco */
+  .tile img {
+    width: 85px;
+    height: auto;
+    max-height: 85px;
+    margin-top: 5px;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+  
+  /* Efeito ao tocar */
+  .tile:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  
+  /* Botão de logout */
+  .logout-button {
+    margin-top: 30px;
+    padding: 14px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 220px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .logout-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* 🔥 RESPONSIVIDADE - GARANTE 2 COLUNAS SEMPRE 🔥 */
+  @media (max-width: 450px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(2, 1fr); /* Mantém sempre 2 colunas */
+    }
+  
+    .tile {
+      height: 140px;
+      font-size: 14px;
+    }
+  
+    .tile img {
+      max-height: 75px;
+      width: 75px;
+    }
+  }
+  
