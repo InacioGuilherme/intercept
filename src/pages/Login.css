@@ -1,154 +1,128 @@
-/* Reset de margin e padding */
-* {
+/* App.css */
+
+body {
   margin: 0;
   padding: 0;
+  background-color: #1b1b1b;
+  font-family: Arial, sans-serif;
+}
+
+.login {
+  display: flex;
+  min-height: 100vh;
+
+  background-color: black;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 800px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-/* Corpo do site */
-body {
-  background-color: #222 !important; /* Fundo totalmente preto */ 
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Wrapper geral do login */
-.loginWrapper {
-  background-color: #222;; /* Fundo totalmente preto */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-}
-
-/* Caixa de login */
-.loginBox {
-  background-color: #222;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  width: 100vh !important;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  max-width: 380px;
+.login-box {
   text-align: center;
-}
-
-/* Cabeçalho */
-.loginHeader {
-  color: #fff;
-  font-size: 24px;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.loginSubHeader {
-  color: #b1b1b1;
-  margin-bottom: 30px;
-  font-size: 14px;
-}
-
-/* Estilo dos campos de input */
-.loginInput {
+  background-color: #222;
+  padding: 60px 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  max-width: 420px;
   width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  background-color: #333;
+}
+
+.login-box h1 {
   color: #fff;
-  border: 1px solid #555;
-  border-radius: 8px;
-  font-size: 14px;
+  margin-bottom: 25px;
+  font-size: 24px;
+  line-height: 1.4;
 }
 
-.loginInput:focus {
-  outline: none;
-  border-color: #3b82f6;
+.login-box p {
+  color: #bbb;
+  margin-bottom: 30px;
 }
 
-/* Estilo do botão de login */
-.loginButton {
+.login-input {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+  margin-bottom: 20px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #20bf55, #01baef);
   border: none;
   border-radius: 8px;
   color: #fff;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  margin-bottom: 30px;
+  transition: background-color 0.3s;
+  font-size: 14px;
 }
 
-.loginButton:hover {
-  background-color: #0284c7;
-  transform: scale(1.05);
+.login-button:hover {
+  opacity: 0.9;
 }
 
-/* Seção de suporte */
-.supportSection {
+.support {
+  color: #bbb;
   margin-top: 20px;
 }
 
-.supportText {
-  color: #bbb;
-  font-size: 12px;
-}
-
-.supportIcons {
+.support-icons {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
-.iconButton {
+.icon-button {
   background-color: transparent;
   border: 1px solid #555;
-  padding: 8px;
+  padding: 6px;
   border-radius: 50%;
-  color: #bbb;
-  font-size: 20px;
-  margin: 0 10px;
+  margin: 0 12px;
   cursor: pointer;
+  color: #ccc;
+  font-size: 22px;
   transition: color 0.3s, background-color 0.3s;
 }
 
-.iconButton:hover {
+.icon-button:hover {
   color: #fff;
   background-color: #333;
 }
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 480px) {
-  .loginBox {
-    padding: 25px;
-    width: 90%;
+  .login-box {
+    padding: 40px 30px;
+    border-radius: 10px;
   }
 
-  .loginHeader {
-    font-size: 22px;
+  .login-box h1 {
+    font-size: 20px;
   }
 
-  .loginSubHeader {
+  .login-input {
+    padding: 12px;
     font-size: 12px;
   }
 
-  .loginButton {
+  .login-button {
     padding: 12px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
-  .supportText {
-    font-size: 10px;
-  }
-
-  .iconButton {
+  .icon-button {
     font-size: 18px;
   }
 }
