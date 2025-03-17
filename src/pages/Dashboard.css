@@ -26,9 +26,11 @@ body {
   /* Cabeçalho atualizado */
   header {
     width: 100%;
+    border: 1px solid red;
     background: white;
     height: 70px;
-    padding: 20px;
+    padding: 15px;
+    gap: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;

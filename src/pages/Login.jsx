@@ -2,59 +2,67 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-function Login() {
+function NewLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // Função para verificar login
+  // Função para validar se o username é um número de telefone válido
+  const isValidPhoneNumber = (phoneNumber) => {
+    const regex = /^[0-9]{10,11}$/; // Valida 10 ou 11 dígitos
+    return regex.test(phoneNumber);
+  };
+
   const handleLogin = () => {
-    if (password === "18742") {
-      navigate("/dashboard"); // Redireciona para o painel
+    if (!isValidPhoneNumber(username)) {
+      return;
+    }
+
+    if (password === "18742") { // Exemplo de senha
+      // Passa o número de telefone como estado para o Dashboard
+      navigate("/dashboard", { state: { phone: username } });
     } else {
-      alert("Senha incorreta! Tente novamente.");
+      alert("Credenciais incorretas, tente novamente!");
     }
   };
 
   return (
-    <div className="login">
-    <div className="login-container">
-      <div className="login-box">
-        <h1>Bem-vindo ao aplicativo<br />Intercept Espionagem V2</h1>
-        <p>Digite seu usuário e senha para acessar</p>
-        
+    <div className="loginWrapper">
+      <div className="loginBox">
+        <h1 className="loginHeader">Intercept - Acesso ao Sistema</h1>
+        <p className="loginSubHeader">Entre com suas credenciais para acessar</p>
+
         <input
           type="text"
-          placeholder="Digite seu usuário..."
-          className="login-input"
+          placeholder="Usuário"
+          className="loginInput"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         
         <input
           type="text"
-          placeholder="Digite sua senha..."
-          className="login-input"
+          placeholder="Senha"
+          className="loginInput"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        
-        <button className="login-button" onClick={handleLogin}>
-          ENTRAR NO PAINEL DE MONITORAMENTO
+
+        <button className="loginButton" onClick={handleLogin}>
+          Acessar
         </button>
 
-        <div className="support">
-          <span>SUPORTE TÉCNICO</span>
-          <div className="support-icons">
-            <button className="icon-button">📞</button>
-            <button className="icon-button">✉️</button>
-            <button className="icon-button">@</button>
+        <div className="supportSection">
+          <span className="supportText">Precisa de ajuda?</span>
+          <div className="supportIcons">
+            <button className="iconButton">📞</button>
+            <button className="iconButton">✉️</button>
+            <button className="iconButton">💬</button>
           </div>
         </div>
       </div>
     </div>
-    </div>
   );
 }
 
-export default Login;
+export default NewLogin;
